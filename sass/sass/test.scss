@@ -1,0 +1,58 @@
+@import 'common';
+
+$color:red;
+$color:yellow !default;
+$class:bbb;
+$bg:background;
+$class1:zzz;
+$class2:qwe;
+body{
+	background: $color;
+	div{
+		width: 200px;
+	}
+	.#{$class}{
+		#{$bg}:#ccc;
+		background:url(img/#{$class}.jpg);
+	}
+
+	.#{$class1}{
+		padding: {
+			left:10px;
+			height: 10px;
+		}
+	}
+	.#{$class2}{
+		a{
+			color: red;
+			&:hover{
+				color:blue;
+			};
+		}
+	}
+
+	@mixin stu($width: 50px,$height: 30px){
+		width: $width;
+		height: $height;
+		border-style: solid;
+	}
+	.its{
+		@include stu();
+	}
+	/*@mixin arrow($direction){
+		width: 0;
+		height: 0;
+		font-size: 0;
+		border-color: red transparent transparent transparent;
+		border-style: solid dashed dashed dashed;
+		border-width: 10px; 
+
+	}*/
+	.item4{
+		@include arrow(left);
+		width: 0;
+		height: 0;
+		font-size: 0;
+		border-width: 10px; 
+	}
+}
